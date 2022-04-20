@@ -4,7 +4,7 @@ const app = express();
 
 app.get("/", (req, res) => {
   res.status(200).send({
-    message: "coba tes dari runner jc20",
+    message: "coba tes dari runner jc20 arta",
   });
 });
 

@@ -8,4 +8,4 @@ app.get("/", (req, res) => {
   });
 });
 
-app.listen(6000, () => console.log("app jalan di 6000 "));
+app.listen(4000, () => console.log("app jalan di 4000 "));

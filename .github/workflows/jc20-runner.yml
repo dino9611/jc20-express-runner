@@ -5,25 +5,23 @@ name: JC20 CD
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
-
     runs-on: self-hosted
 
-  
-
     steps:
-    - uses: actions/checkout@v3
-#     - name: Use Node.js ${{ matrix.node-version }}
-#       uses: actions/setup-node@v3
-#       with:
-#         node-version: ${{ matrix.node-version }}
-#         cache: 'npm'
-    - name: install library
-      run: npm ci
-  
-#     - run: npm test
+      - uses: actions/checkout@v3
+      #     - name: Use Node.js ${{ matrix.node-version }}
+      #       uses: actions/setup-node@v3
+      #       with:
+      #         node-version: ${{ matrix.node-version }}
+      #         cache: 'npm'
+      - name: install library
+        run: npm ci
+
+      - name: restart app with pm2
+        run: PM2_HOME="/root/.pm2" pm2 restart jc20-runner
